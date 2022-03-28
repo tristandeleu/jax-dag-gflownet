@@ -108,7 +108,7 @@ class BDeScore(BaseScore):
     def local_score(self, key, counts):
         counts = np.asarray(counts)
         num_parents_states = counts.shape[1]
-        num_parents = 0  # TODO
+        num_parents = len(key[1])
 
         log_gamma_counts = np.zeros_like(counts, dtype=np.float_)
         alpha = self.equivalent_sample_size / num_parents_states
